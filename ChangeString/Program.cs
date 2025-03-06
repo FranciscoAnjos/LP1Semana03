@@ -11,7 +11,13 @@ namespace ChangeString
 
             Console.Write("Enter a character to replace: ");
             char charToReplace = Console.ReadKey().KeyChar;
-            Console.WriteLine(); 
+            Console.WriteLine();
+
+            if (inputString != null)
+            {
+                string resultString = inputString.Replace(charToReplace, 'x');
+                Console.WriteLine("Modified string: " + resultString);
+            }
         }
     }
 }
