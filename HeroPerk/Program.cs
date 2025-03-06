@@ -8,6 +8,28 @@ namespace HeroPerk
         {
             string input = args[0];
             Perks playerPerks = Perks.None;
+            
+            foreach (char c in input)
+            {
+                switch (c)
+                {
+                    case 'w': 
+                        playerPerks ^= Perks.WarpShift; 
+                        break; 
+                    case 'a': 
+                        playerPerks ^= Perks.Stealth; 
+                        break;
+                    case 's': 
+                        playerPerks ^= Perks.AutoHeal; 
+                        break;
+                    case 'd': 
+                        playerPerks ^= Perks.DoubleJump; 
+                        break;
+                    default: 
+                        Console.WriteLine("!Unknown perk!");
+                        return;
+                }
+            }
         }
     }
     
