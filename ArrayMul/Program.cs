@@ -21,6 +21,9 @@ namespace ArrayMul
             
             float result1 = a11 * b1 + a12 * b2;
             float result2 = a21 * b1 + a22 * b2;
+            
+            Console.WriteLine($"| {result1,7:F2} |");
+            Console.WriteLine($"| {result2,7:F2} |");
         }
     }
 }
