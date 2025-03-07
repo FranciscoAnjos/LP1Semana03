@@ -46,9 +46,14 @@ namespace TrapAnalyzer
         /// <returns>Wether the player survived the trap or not.</returns>
         private static bool CanSurviveTrap(TrapType trap, PlayerGear gear)
         {
-            // ////////// //
-            // CHANGE ME! //
-            // ////////// //
+            return trap switch
+            {
+                TrapType.FallingRocks => (gear & PlayerGear.Helmet) != 0,
+                TrapType.SpinningBlades => (gear & PlayerGear.Boots) != 0,
+                TrapType.PoisonGas => (gear & PlayerGear.Helmet & PlayerGear.Shield) != 0,
+                TrapType.LavaPit => (gear & PlayerGear.Boots) != 0,
+                _ => false
+            };
         }
 
         /// <summary>
